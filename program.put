@@ -1,0 +1,13 @@
+use std.put
+
+
+proc main : in
+    0 getln "hello\n" strcmp if
+        "equals" println
+        1
+    end 0 = if
+        "not equals" println
+    end
+end
+
+

@@ -1,0 +1,33 @@
+
+proc strcmp ptr ptr : bool in
+    dup rot dup rot swap
+    1 (bool)
+end
+
+proc strlen ptr : int in
+    dup 0
+    strlen_1:
+        1 +
+        swap (int) 1 + dup load 0 = if
+            goto strlen_2:
+        end
+        (ptr) swap
+    goto strlen_1:
+    strlen_2:
+    drop
+end
+
+proc println ptr : in
+    strlen swap 1 write
+    1 "\n" 1 write
+end
+
+proc perror ptr : in
+    strlen swap 2 write
+    1 "\n" 1 write
+end
+
+proc getln : ptr in
+    99 0 read
+end
+
